@@ -11,11 +11,10 @@ for (const population of populations) {
   numbers.push(number);
 }
 
-const total = numbers
-  .filter((n) => !Number.isNaN(n))
-  .reduce((acc, val) => acc + val, 0);
+const allNumbers = numbers.filter((n) => !Number.isNaN(n))
+const total = allNumbers.reduce((acc, val) => acc + val, 0);
 
-const average = Math.round(total / numbers.length);
+const average = Math.round(total / allNumbers.length);
 
 const formatter = new Intl.NumberFormat('en-US');
 
