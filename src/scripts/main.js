@@ -6,12 +6,12 @@ const numbers = [];
 
 for (const population of populations) {
   const raw = population.textContent.trim();
-  const number = Number(raw.replace(/[^\d.-]/g, ''));
+  const number = Number(raw.replace(/,/g, ''));
 
   numbers.push(number);
 }
 
-const allNumbers = numbers.filter((n) => !Number.isNaN(n))
+const allNumbers = numbers.filter((n) => !Number.isNaN(n));
 const total = allNumbers.reduce((acc, val) => acc + val, 0);
 
 const average = Math.round(total / allNumbers.length);
